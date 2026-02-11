@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Liga Escolar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo Liga">
+  <h1>Liga Escolar – Disponibilidad de Horarios</h1>
+</header>
+
+<div class="formulario">
+  <input type="text" id="nombre" placeholder="Nombre del jugador">
+
+  <h3>Selecciona tus horarios OCUPADOS</h3>
+  <div id="horarios"></div>
+
+  <button onclick="guardarJugador()">Guardar disponibilidad</button>
+</div>
+
+<hr>
+
+<h2>📊 Horarios con mayor disponibilidad</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Día</th>
+      <th>Horario</th>
+      <th>Disponibles</th>
+    </tr>
+  </thead>
+  <tbody id="tablaResultados"></tbody>
+</table>
+
+<hr>
+
+<!-- ================= VISTA ORGANIZADOR ================= -->
+<div class="organizador">
+  <h2>🔒 Vista del organizador</h2>
+
+  <button onclick="toggleGrafica()">Mostrar / Ocultar gráfica</button>
+  <p id="totalJugadores"></p>
+
+  <div id="zonaGrafica" style="display:none;">
+    <h3>📈 Disponibilidad por horario</h3>
+    <canvas id="graficaHorarios" height="120"></canvas>
+  </div>
+
+  <button class="danger" onclick="borrarTodo()">Borrar todos los datos</button>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
